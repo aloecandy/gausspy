@@ -22,7 +22,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 #  With Python 3.8 the start method for multiprocessing defaults to 'spawn' for
 #  MacOS systems. Here we change it back to 'fork' for compatibility reasons.
 if sys.version_info[:2] >= (3, 8):
-    multiprocessing.set_start_method("fork", force=True)
+    multiprocessing.set_start_method("spawn", force=True)
 
 
 def init_worker():
